@@ -133,10 +133,13 @@ nav h1 {
   padding: 10px 30px !important;
   cursor: pointer;
   width:100% !important;
+  font-size:15px;
+  font-weight:600;
+  color:#4175e6;
 }
 
 .post-submit:hover {
-  background-color: darkcyan !important;
+  background-color:#4175e6 !important;
   color:white;
   transition:all 1s ease-in-out;
 }

@@ -19,12 +19,12 @@ export default function Card({ obj }) {
 
       <div style={{ width: "100%", height: "60%", minHeight: "40%" }}>
         <img
-          src={"http://localhost:8083/l" + image}
+          src={image}
           alt="no-img"
           className="post-img"
-          onError={(e) => {
-            e.target.onerror = null; 
-            e.target.src = fallbackImage; 
+          onError={(event) => {
+            event.target.onerror = null; 
+            event.target.src = fallbackImage; 
           }}
         />
       </div>

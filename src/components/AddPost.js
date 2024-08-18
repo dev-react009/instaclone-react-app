@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../LandingPage/Navbar";
 import { useNavigate } from "react-router-dom";
-const apiUri ='http://localhost:8083/api';
+const apiUri ='https://instaclone-express-app.vercel.app/';
 const AddPost = () => {
   const [isSuccess, setIsSucess] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
@@ -30,11 +30,9 @@ const AddPost = () => {
         formData.append("image", file);
         formData.append("date", date);
 
-        const response = await fetch(`${apiUri}/add/post`, {
+        const response = await fetch(`${apiUri}api/add/post`, {
           method: "POST",
-          headers: {
-
-          },
+          headers: {},
           body: formData,
         })
 
@@ -49,8 +47,6 @@ const AddPost = () => {
         }, 3000);
 
         e.target.reset();
-
-
         console.log(resp);
       } else {
         setIsUploading(false);
@@ -74,7 +70,7 @@ const AddPost = () => {
 
       <div className="add-post-container">
         <form
-          action="http://localhost:8083/api/add/post"
+          action="https://instaclone-express-app.vercel.app /api/add/post"
           method="post"
           className="post-form"
           onSubmit={handleSubmit}

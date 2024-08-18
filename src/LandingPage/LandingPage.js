@@ -9,13 +9,13 @@ const LandingPage = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        let response = await fetch("http://localhost:8083/api/get/post");
+        let response = await fetch("https://instaclone-express-app.vercel.app/api/get/post",{method:"GET"});
         let data = await response.json();
-        setUsers(data);
-        setLoading(false); // Set loading to false after data is fetched
+        setUsers(data.reverse());
+        setLoading(false);
       } catch (error) {
         console.error('Error fetching data:', error);
-        setLoading(false); // Set loading to false if there's an error
+        setLoading(false); 
       }
     }
 
@@ -35,12 +35,12 @@ const LandingPage = () => {
     <div className="site-container">
       <Navbar />
       <div className="container">
-        {loading ? ( // Check if the data is still loading
+        {loading ? ( 
           <p style={noUsersStyle}>Loading...</p>
         ) : users.length > 0 ? (
           users.map((obj, idx) => <Card key={"Sree" + idx} obj={obj} />)
         ) : (
-          <p style={noUsersStyle}>No users found</p>
+          <p style={noUsersStyle}>No Users Found</p>
         )}
       </div>
     </div>
