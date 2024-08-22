@@ -1,4 +1,4 @@
-USE this Link : https://instaclone-react-app.vercel.app/LandingPage
+USE this Link : https://instaclone-react-app.vercel.app
 
 # Getting Started with Create React App
 
